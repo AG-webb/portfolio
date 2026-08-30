@@ -1,0 +1,13 @@
+.hero {
+  --section-padding-top: 180px;
+
+  &__wrap {
+    grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+    gap: 64px;
+    align-items: center;
+  }
+}
+
+.codebox {
+  --codebox-title-text-alignment: center;
+}

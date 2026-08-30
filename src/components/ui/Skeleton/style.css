@@ -1,0 +1,24 @@
+.skeleton {
+  --skeleton-default-color: var(--color-neutral-800);
+  --skeleton-shimmer-color: #293850;
+
+  animation: skeleton-shimmer 2s ease-out infinite;
+  background: linear-gradient(
+    100deg,
+    var(--skeleton-default-color),
+    var(--skeleton-default-color) 50%,
+    var(--skeleton-shimmer-color) 60%,
+    var(--skeleton-default-color) 70%
+  );
+  background-size: 200% 100%;
+  background-attachment: fixed;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position-x: 200%;
+  }
+  100% {
+    background-position-x: 0%;
+  }
+}

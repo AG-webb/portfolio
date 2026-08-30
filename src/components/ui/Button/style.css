@@ -1,0 +1,32 @@
+.btn {
+    --icon-vertical-align: -1px;
+
+    cursor: pointer;
+    height: var(--btn-height, 24px);
+    padding-inline: var(--btn-padding-inline, 16px);
+    font-size: var(--btn-font-size, 14px);
+    font-weight: var(--btn-font-weight, 600);
+    border-radius: var(--btn-border-radius, 8px);
+
+    &__spinner {
+        display: inline-block;
+        margin-inline: auto;
+        vertical-align: middle;
+    }
+    
+    &_medium {
+        --btn-padding-inline: 20px;
+        --btn-height: 34px;
+    }
+
+    &_large {
+        --btn-padding-inline: 28px;
+        --btn-font-size: 16px;
+        --btn-height: 49px;
+    }
+
+    &_disabled {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+}

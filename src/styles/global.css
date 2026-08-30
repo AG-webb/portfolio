@@ -1,0 +1,74 @@
+@import "_variables.css";
+@import "_fonts.css";
+@import "_icons.css";
+@import "tailwindcss";
+
+@custom-variant light (&:where(.light-theme, .light-theme *));
+
+@layer base {
+  html {
+    @apply font-primary;
+  }
+
+  body {
+    @apply bg-primary-900 text-neutral-50;
+  }
+}
+
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  --text-xs: 14px;
+  --text-sm: 16px;
+  --text-base: 18px;
+  --text-lg: 20px;
+  --text-xl: 36px;
+  --text-2xl: 56px;
+  --text-2xl--line-height: 1.1;
+}
+
+@theme inline {
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-700: var(--color-primary-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-50: var(--color-neutral-50);
+  --color-accent-indigo: var(--color-accent-indigo);
+  --color-accent-cyan: var(--color-accent-cyan);
+}
+
+/* for iphone when set overflow: hidden + border-radius */
+@utility overflow-radius {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+section {
+  padding-top: var(--section-padding-top, 120px);
+  padding-bottom: var(--section-padding-bottom, 120px);
+  border-bottom: var(--section-border-bottom, 1px solid var(--color-slate-700));
+}
+
+.text-2xl {
+  font-weight: 800;
+}
+
+pre.shiki {
+  width: 100%;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.code-window pre.shiki .line {
+  /* don't force lines to remain single-line */
+}

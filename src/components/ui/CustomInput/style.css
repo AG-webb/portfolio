@@ -1,0 +1,16 @@
+.form-field {
+  &__input {
+    display: block;
+    width: 100%;
+    padding-inline: var(--form-field-input-padding-inline, 20px);
+    background: var(--color-white);
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    color: var(--color-dark);
+    height: var(--form-field-input-height, 50px);
+
+    &::placeholder {
+      color: var(--color-gray-400);
+    }
+  }
+}
