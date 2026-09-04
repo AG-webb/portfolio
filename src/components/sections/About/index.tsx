@@ -1,7 +1,48 @@
+import BadgeGroup from "@/components/ui/BadgeGroup";
+import CodeBox from "@/components/ui/CodeBox";
+import Section from "@/components/ui/Section";
+
+const code = `# Biography
+// Over 8+ years of craft in front-end development.
+// I bridge the gap between engineering and design.
+// Deeply obsessed with performance optimizations,
+// accessible semantics, and high-fidelity interaction.
+
+$ npx dev-tools --experience
+// - Refactored legacy framework codebase to Next.js (40% load time cut)
+// - Engineered atomic design system token mapping from Figma APIs
+// - Standardized WCAG 2.1 compliance structures systematically`;
+
 const About = () => {
   return (
-    <section>About</section>
+    <Section
+      id="about"
+      className="about"
+      subtitle="About & Tech Stack"
+      title="Technical expertise built on solid fundamentals"
+    >
+      <div className="about__content grid gap-8 lg:grid-cols-[minmax(0,55%)_minmax(0,45%)] lg:items-start lg:gap-16">
+        <CodeBox title="bash - profile.md" code={code} />
+        <div className="about__stack grid gap-3 lg:gap-6">
+          <BadgeGroup
+            title="Languages"
+            badges={["JavaScript(ES6+)", "React", "TypeScript"]}
+          />
+          <BadgeGroup
+            title="Frameworks & Libs"
+            badges={["React", "TypeScript", "Next.js", "Tailwind CSS"]}
+          />
+          <BadgeGroup
+            title="Styling & Design"
+            badges={["React", "TypeScript", "Next.js", "Tailwind CSS"]}
+          />
+          <BadgeGroup
+            title="Tools & Backend"
+            badges={["React", "TypeScript", "Next.js", "Tailwind CSS"]}
+          />
+        </div>
+      </div>
+    </Section>
   );
-}
-
+};
 export default About;

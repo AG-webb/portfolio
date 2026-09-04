@@ -7,11 +7,16 @@
 
 @layer base {
   html {
-    @apply font-primary;
+    @apply font-primary scroll-smooth;
+    scroll-padding-top: var(--header-height);
   }
 
   body {
     @apply bg-primary-900 text-neutral-50;
+
+    &.locked {
+      overflow: hidden;
+    }
   }
 }
 
@@ -26,6 +31,7 @@
   --text-sm: 16px;
   --text-base: 18px;
   --text-lg: 20px;
+  --text-2lg: 24px;
   --text-xl: 36px;
   --text-2xl: 56px;
   --text-2xl--line-height: 1.1;
@@ -52,23 +58,24 @@
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding-inline);
+  max-width: calc(1536px + (2 * var(--container-padding-inline)));
+}
+
 section {
   padding-top: var(--section-padding-top, 120px);
   padding-bottom: var(--section-padding-bottom, 120px);
   border-bottom: var(--section-border-bottom, 1px solid var(--color-slate-700));
+
+  @media (max-width: 767px) {
+    --section-padding-top: 64px;
+    --section-padding-bottom: 64px;
+  }
 }
 
-.text-2xl {
-  font-weight: 800;
-}
-
-pre.shiki {
-  width: 100%;
-  overflow: hidden;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.code-window pre.shiki .line {
-  /* don't force lines to remain single-line */
+.shift-element {
+  padding-right: var(--scrollbar-width);
 }

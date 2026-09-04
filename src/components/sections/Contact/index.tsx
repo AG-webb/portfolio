@@ -1,7 +1,7 @@
+import Section from "@/components/ui/Section";
+
 const Contact = () => {
-  return (
-    <section>Contact</section>
-  );
-}
+  return <Section id="contact">Contact</Section>;
+};
 
 export default Contact;

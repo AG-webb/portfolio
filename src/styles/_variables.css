@@ -2,7 +2,7 @@
   --font-primary: "Geist";
   --font-secondary: "GeistMono";
 
-  --container-padding-inline: 80px;
+  --header-height: 74px;
 
   --desk-xl: 1659px;
   --desk-l: 1439px;
@@ -19,6 +19,19 @@
   --min-tablet: 1024px;
   --min-mobile-s: 768px;
   --min-mobile-xs: 451px;
+
+  --container-padding-inline: 80px;
+
+  @media (max-width: 1365px) {
+    --container-padding-inline: 40px;
+  }
+  @media (max-width: 1023px) {
+    --container-padding-inline: 24px;
+  }
+  @media (max-width: 767px) {
+    --container-padding-inline: 16px;
+    --header-height: 66px;
+  }
 
   --palette-black: 0 0 0; /* #000000 */
   --palette-white: 255 255 255; /* #FFFFFF */
@@ -46,9 +59,9 @@
   --color-accent-indigo: rgb(var(--palette-indigo));
   --color-accent-cyan: rgb(var(--palette-cyan));
 
-  --color-close: #EF4444;
-  --color-minimize: #F59E0B;
-  --color-exit: #10B981;
+  --color-close: #ef4444;
+  --color-minimize: #f59e0b;
+  --color-exit: #10b981;
 }
 
 .light-theme {

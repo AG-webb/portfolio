@@ -1,1 +1,1 @@
-export { cn } from "./cn";
+export { scrollToSection } from "./scrollToSection";

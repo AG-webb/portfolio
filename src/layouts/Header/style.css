@@ -4,11 +4,8 @@
   left: 0;
   right: 0;
   font-family: var(--font-secondary);
-  padding-block: 20px;
-  background-color: var(--color-primary-800);
-  border: 1px solid rgb(var(--palette-slate-500) / 0.3);
+  border-bottom: 1px solid rgb(var(--palette-slate-500) / 0.3);
   box-shadow: 0px 2px 8px rgb(var(--palette-black) / 0.3);
-  backdrop-filter: blur(10px);
   z-index: 10;
 
   &__wrap {
@@ -16,22 +13,23 @@
     gap: 16px;
     justify-content: space-between;
     align-items: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background-color: var(--color-primary-800);
+    }
   }
 
   &__name {
-    font-size: 20px;
     font-weight: bold;
     font-family: var(--font-secondary);
+    z-index: 1;
   }
-}
 
-.nav {
-  &__wrap {
-    display: flex;
-    gap: 32px;
-    justify-content: space-between;
-    color: var(--color-neutral-300);
-    font-size: 14px;
-    font-weight: 500;
+  &__burger, &__action {
+    z-index: 1;
   }
 }

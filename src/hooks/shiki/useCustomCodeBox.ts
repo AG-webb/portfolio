@@ -6,15 +6,15 @@ export const useCustomCodeBox = (code: string) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const customTheme = createCssVariablesTheme({
-    name: "codebox-style",
-    variablePrefix: "--codebox-",
-    variableDefaults: {},
-    fontStyle: true,
-  });
-
   useEffect(() => {
-    async function initHighlighter() {
+    const customTheme = createCssVariablesTheme({
+      name: "codebox-style",
+      variablePrefix: "--codebox-",
+      variableDefaults: {},
+      fontStyle: true,
+    });
+
+    async function initShiki() {
       try {
         const highlighter = await createHighlighter({
           langs: ["typescript"],
@@ -44,8 +44,8 @@ export const useCustomCodeBox = (code: string) => {
         setLoading(false);
       }
     }
-    initHighlighter();
-  }, []);
+    initShiki();
+  }, [code]);
 
   return {
     html,

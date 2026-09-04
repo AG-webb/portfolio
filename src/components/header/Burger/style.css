@@ -1,0 +1,47 @@
+.burger {
+  padding: 4px;
+
+  &__inner {
+    position: relative;
+    width: 30px;
+    height: 22px;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent-cyan);
+
+    &:first-child {
+      top: 0;
+      transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition-delay: var(--burger-line-first-transition-delay);
+      transform: var(--burger-line-first-transform);
+    }
+    &:nth-child(2) {
+      top: 10px;
+      transition: opacity 0.125s ease 0.275s;
+      transition-delay: var(--burger-line-second-transition-delay);
+      opacity: var(--burger-line-second-opacity);
+    }
+    &:nth-child(3) {
+      top: 20px;
+      transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition-delay: var(--burger-line-third-transition-delay);
+      transform: var(--burger-line-third-transform);
+    }
+  }
+
+  &_open {
+    --burger-line-first-transition-delay: 75ms;
+    --burger-line-first-transform: translate3d(0, 10px, 0) rotate(135deg);
+
+    --burger-line-second-transition-delay: 0s;
+    --burger-line-second-opacity: 0;
+
+    --burger-line-third-transition-delay: 75ms;
+    --burger-line-third-transform: translate3d(0, -10px, 0) rotate(-315deg);
+  }
+}

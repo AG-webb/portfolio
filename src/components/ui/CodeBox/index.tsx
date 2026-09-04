@@ -5,26 +5,7 @@ import Skeleton from "../Skeleton";
 import "./style.css";
 import type { CodeBoxProps } from "./types";
 
-const code = `import React from 'react';
-import { UI, <UX> } from './engine';
-
-// Architectural excellence by design
-const Ararat = {
-  role: "Web Front-end Developer",
-  stack: ["React.js", "Typescript", "CSS/Tailwind"],
-  metrics: { coreWebVitals: "99/100", cleanCodeRating: "10/10" }
-};
-
-export default function Portfolio() {
-  return (
-    <UI.Grid optimized={
-      deliverPremiumExperiences()
-    }
-    />
-  );
-}`;
-
-const CodeBox = ({ title }: CodeBoxProps) => {
+const CodeBox = ({ title, code }: CodeBoxProps) => {
   const { html, loading, error } = useCustomCodeBox(code);
 
   return (
