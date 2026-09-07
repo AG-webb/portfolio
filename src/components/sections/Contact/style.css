@@ -1,0 +1,18 @@
+.contact-item {
+  &:nth-child(odd) {
+    --contact-item-color: var(--palette-cyan);
+  }
+  &:nth-child(even) {
+    --contact-item-color: var(--palette-indigo);
+  }
+
+  &__icon {
+    background-color: rgb(var(--contact-item-color) / 0.08);
+    border-color: rgb(var(--contact-item-color) / 0.18);
+    color: rgb(var(--contact-item-color));
+  }
+
+  &__title {
+    color: rgb(var(--contact-item-color));
+  }
+}

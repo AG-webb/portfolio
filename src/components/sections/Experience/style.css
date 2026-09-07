@@ -1,0 +1,8 @@
+.timeline-item {
+  --timeline-item-content-padding-bottom: 48px;
+
+  &:last-child {
+    --timeline-item-divider-line-display: none;
+    --timeline-item-content-padding-bottom: 0;
+  }
+}
