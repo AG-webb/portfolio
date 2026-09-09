@@ -1,30 +1,36 @@
 import noImage from "@/assets/images/no-image.png";
 import Badge from "@/components/ui/Badge";
 import Icon from "@/components/ui/Icon";
-import type { ProjectCardProps } from "./types";
+import type { Project } from "@/features/projects/types";
 
 const ProjectCard = ({
-  imageUrl,
+  image_url,
   title,
   description,
   stack,
-  liveSiteUrl,
-  githubUrl,
-}: ProjectCardProps) => {
+  site_url,
+  github_url,
+  isPrivate,
+}: Project) => {
   return (
-    <div className="project-card bg-neutral-800 rounded-xl border border-neutral-700 overflow-hidden">
+    <div className="project-card w-full grid-rows-[auto_1fr_auto] grid bg-neutral-800 rounded-xl border border-neutral-700 overflow-hidden">
       <div className="project-card__img aspect-video">
         <img
           className="w-full h-full object-cover"
-          src={imageUrl || noImage}
+          src={image_url || noImage}
           alt="project"
           width="410"
           height="200"
         />
       </div>
       <div className="project-card__body p-5">
-        <h3 className="project-card__title text-base font-bold mb-3">
+        <h3 className="project-card__title text-base font-bold mb-3 flex gap-2 items-center">
           {title}
+          {isPrivate && (
+            <Badge palette="indigo">
+              Private <Icon type="lock" />
+            </Badge>
+          )}
         </h3>
         <p className="project-card__description text-xs text-neutral-300">
           {description}
@@ -40,20 +46,24 @@ const ProjectCard = ({
         </div>
         <div className="project-card__links flex gap-3 justify-between">
           <a
-            href={liveSiteUrl || "#"}
-            aria-label="live site"
+            href={site_url || "#"}
+            target="_blank"
+            aria-label="live site url"
             className="text-[13px] font-semibold flex items-center gap-1 text-accent-cyan"
           >
-            {liveSiteUrl ? "Explore Live Site" : "Live Site"}
+            {isPrivate ? "Info" : "Explore Live Site"}
             <Icon type="external-link" />
           </a>
-          <a
-            href={githubUrl || "#"}
-            aria-label="github"
-            className="text-base flex text-neutral-400"
-          >
-            <Icon type="github" />
-          </a>
+          {github_url ? (
+            <a
+              href={github_url}
+              target="_blank"
+              aria-label="github url"
+              className="text-base flex text-neutral-400"
+            >
+              <Icon type="github" />
+            </a>
+          ) : null}
         </div>
       </div>
     </div>

@@ -1,10 +1,12 @@
-import { contentSlice } from "@/features/content/model/authSlice";
+import contentReducer from "@/features/content/model/contentSlice";
+import projectsReducer from "@/features/projects/model/projectsSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 
 export const store = configureStore({
   reducer: {
-    content: contentSlice.reducer,
+    content: contentReducer,
+    projects: projectsReducer,
   },
 });
 

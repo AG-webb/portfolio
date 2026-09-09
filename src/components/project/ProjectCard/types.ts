@@ -5,4 +5,5 @@ export type ProjectCardProps = {
   stack: string[];
   liveSiteUrl?: string;
   githubUrl?: string;
+  isPrivate: boolean;
 };
