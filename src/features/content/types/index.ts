@@ -1,6 +1,8 @@
+import type { Status } from "@/types";
+
 export interface contentState {
   nav: navItem[] | null;
-  status?: "idle" | "loading" | "loaded";
+  status?: Status;
 }
 
 export interface GetNavResponse {
