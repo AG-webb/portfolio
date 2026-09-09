@@ -1,9 +1,14 @@
 import Icon from "@/components/ui/Icon";
 import type { ContactItemProps } from "./types";
 
-const ContactItem = ({ icon, title, value }: ContactItemProps) => {
+const ContactItem = ({ icon, title, value, url }: ContactItemProps) => {
+  const ContactItemElement = url ? "a" : "div";
+
   return (
-    <div className="contact-item bg-neutral-800 rounded-xl border border-neutral-700 p-3 md:p-6">
+    <ContactItemElement
+      href={url || undefined}
+      className="contact-item bg-neutral-800 rounded-xl border border-neutral-700 p-3 md:p-6"
+    >
       <div className="contact-item__icon size-10 mb-4 rounded-[10px] border flex items-center justify-center">
         <Icon className="text-lg" type={icon} />
       </div>
@@ -13,7 +18,7 @@ const ContactItem = ({ icon, title, value }: ContactItemProps) => {
       <div className="contact-item_value text-sm font-bold text-neutral-50">
         {value}
       </div>
-    </div>
+    </ContactItemElement>
   );
 };
 
