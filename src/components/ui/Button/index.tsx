@@ -1,47 +1,74 @@
-import clsx from 'clsx';
-import { useNavigate } from "react-router";
-import "./style.css";
-import type { ButtonType } from "./types";
+import clsx from "clsx";
+import { type ElementType } from "react";
+import Spinner from "../Spinner";
+import type {
+  ButtonSize,
+  ButtonVariant,
+  PolymorphicButtonProps,
+} from "./types";
 
-const Button = ({
-  className,
-  type,
-  link,
+const variantStyles: Record<ButtonVariant, string> = {
+  primary: "bg-accent-indigo",
+  secondary: "border border-slate-700",
+};
+
+const sizeStyles: Record<ButtonSize, string> = {
+  small: "btn_small px-4 h-6 text-xs font-semibold rounded-md",
+  medium: "btn_medium px-5 h-8.5 text-xs font-semibold rounded-md",
+  large: "btn_large px-7 h-12.5 text-xs font-semibold rounded-md",
+};
+
+const Button = <E extends ElementType = "button">({
+  as,
+  variant,
   size,
-  loading,
+  isLoading,
   children,
-  onClick,
-}: ButtonType) => {
-  const navigate = useNavigate();
+  className,
+  contentClassName,
+  disabled,
+  ...restProps
+}: PolymorphicButtonProps<E>) => {
+  const Component = as ?? "button";
+  const isButton = Component === "button";
 
-  const handleClick = () => {
-    if (link) {
-      navigate(link);
-    }
+  const baseClasses = "relative inline-flex items-center btn cursor-pointer";
+  const variantClasses = variant && variantStyles[variant];
+  const sizeClasses = size && sizeStyles[size];
 
-    onClick?.();
-  };
+  const isDisabled = disabled || isLoading;
+  const combinedClasses = clsx(
+    baseClasses,
+    variantClasses,
+    sizeClasses,
+    className,
+    isDisabled && "opacity-60 pointer-events-none",
+  );
 
   return (
-    <button
-      className={clsx(
-        "btn",
-        size ? `btn_${size}` : "",
-        className,
-        loading ? "btn_disabled" : "",
-      )}
-      onClick={handleClick}
-      type={type || "button"}
+    <Component
+      className={combinedClasses}
+      {...(isButton
+        ? { disabled: isDisabled }
+        : { "aria-disabled": isDisabled })}
+      {...restProps}
     >
-      {}
-      {loading ? (
-        <span className="btn__spinner">
-          loading
-        </span>
-      ) : (
-        children
+      {isLoading && (
+        <Spinner
+          className="absolute left-1/2 top-1/2 -translate-1/2"
+          size={25}
+        />
       )}
-    </button>
+      <span
+        className={clsx(
+          "btn__content transition-opacity",
+          contentClassName,
+          isLoading && "opacity-0",
+        )}
+      >
+        {children}
+      </span>
+    </Component>
   );
 };
 
