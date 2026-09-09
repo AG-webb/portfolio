@@ -27,17 +27,36 @@ export const IntersectionProvider = ({ children }: { children: ReactNode }) => {
   );
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: [0, 0.25, 0.5, 0.75, 1],
-    };
+    let intersectingSections: { id: string; isIntersecting: boolean }[] = [];
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
-      const visibleSections = entries.filter((entry) => entry.isIntersecting);
+      console.log(entries)
+
+      const visibleSections = entries.filter((entry) => {
+        if (intersectingSections.length) {
+          intersectingSections = [
+            ...intersectingSections,
+            { id: entry.target.id, isIntersecting: entry.isIntersecting },
+          ];
+        } else {
+          intersectingSections = [
+            ...intersectingSections.map((section) => {
+              if (section.id === entry.target.id) {
+                return { ...section, isIntersecting: entry.isIntersecting };
+              } else {
+                return section;
+              }
+            }),
+          ];
+        }
+
+        return entry.isIntersecting;
+      });
 
       if (!visibleSections.length) {
-        setActiveSection(null);
+        if (!intersectingSections.some((section) => section.isIntersecting)) {
+          setActiveSection(null);
+        }
         return;
       }
 
@@ -50,10 +69,9 @@ export const IntersectionProvider = ({ children }: { children: ReactNode }) => {
       setActiveSection(topMostSection.target.id as Sections);
     };
 
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions,
-    );
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.1,
+    });
 
     observerRef.current = observer;
 
