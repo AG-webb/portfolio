@@ -3,8 +3,9 @@ import Burger from "@/components/header/Burger";
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import Skeleton from "@/components/ui/Skeleton";
+import SocialMedia from "@/components/ui/SocialMedia";
 import { useContent } from "@/features/content/hooks/useContent";
-import { getNav } from "@/features/content/model/authThunks";
+import { getNav } from "@/features/content/model/contentThunks";
 import { useBodyScrollLock, useIntersection } from "@/hooks";
 import { scrollToSection } from "@/lib/utils";
 import clsx from "clsx";
@@ -71,7 +72,8 @@ const Header = () => {
                             "nav__link text-2lg lg:text-xs font-medium text-left cursor-pointer",
                             {
                               "text-accent-indigo":
-                                activeSection === item.name.toLocaleLowerCase(),
+                                activeSection ===
+                                item.name?.toLocaleLowerCase(),
                             },
                           )}
                         >
@@ -80,16 +82,7 @@ const Header = () => {
                       ))}
                 </div>
                 <div className="nav__footer flex items-center gap-4 mt-10 lg:hidden">
-                  <a href="#" aria-label="github" className="text-xl flex p-1">
-                    <Icon type="github" />
-                  </a>
-                  <a
-                    href="#"
-                    aria-label="linkedin"
-                    className="text-xl flex p-1"
-                  >
-                    <Icon type="linkedin" />
-                  </a>
+                  <SocialMedia />
                 </div>
               </nav>
             </div>
@@ -97,15 +90,15 @@ const Header = () => {
           <div className="header__action">
             <Button
               size="medium"
+              variant="primary"
+              contentClassName="flex gap-2 items-center"
               className={clsx(
-                "bg-accent-indigo transition-opacity",
+                "transition-opacity",
                 isOpen ? "max-lg:opacity-0" : "",
               )}
             >
-              <span className="flex gap-2 items-center">
-                Hire Me
-                <Icon type="arrow-right" />
-              </span>
+              Hire Me
+              <Icon type="arrow-right" />
             </Button>
           </div>
         </div>

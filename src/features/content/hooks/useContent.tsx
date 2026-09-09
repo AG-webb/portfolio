@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "@/app/store";
-import { navSelector, statusSelector } from "../model/authSelectors";
+import { navSelector, statusSelector } from "../model/contentSelectors";
 
 export const useContent = () => {
   const nav = useAppSelector(navSelector);

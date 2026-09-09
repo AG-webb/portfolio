@@ -1,19 +1,60 @@
-import { cn } from "@/lib/utils";
-import { LoaderCircleIcon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
-
-function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
+const Spinner = ({ className, size }: { className?: string; size: number }) => {
   return (
-    <HugeiconsIcon
-      icon={LoaderCircleIcon}
-      data-slot="spinner"
-      role="status"
-      aria-label="Loading"
-      className={cn("size-4 animate-spin", className)}
-      {...props}
-      strokeWidth={2}
-    />
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 200 200"
+    >
+      <g fill="currentColor" stroke="currentColor" stroke-width="15">
+        <circle r="15" cx="50" cy="150">
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            calcMode="spline"
+            dur="0.8"
+            values="0 0;0 -100"
+            keySplines=".5 0 .5 1"
+            repeatCount="indefinite"
+          ></animateTransform>
+        </circle>
+        <circle r="15" cx="50" cy="50">
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            calcMode="spline"
+            dur="0.8"
+            values="0 0;100 0"
+            keySplines=".5 0 .5 1"
+            repeatCount="indefinite"
+          ></animateTransform>
+        </circle>
+        <circle r="15" cx="150" cy="50">
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            calcMode="spline"
+            dur="0.8"
+            values="0 0;0 100 "
+            keySplines=".5 0 .5 1"
+            repeatCount="indefinite"
+          ></animateTransform>
+        </circle>
+        <circle r="15" cx="150" cy="150">
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            calcMode="spline"
+            dur="0.8"
+            values="0 0;-100 0"
+            keySplines=".5 0 .5 1"
+            repeatCount="indefinite"
+          ></animateTransform>
+        </circle>
+      </g>
+    </svg>
   );
-}
+};
 
-export { Spinner };
+export default Spinner;

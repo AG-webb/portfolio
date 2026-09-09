@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import CodeBox from "@/components/ui/CodeBox";
 import Icon from "@/components/ui/Icon";
 import "./style.css";
+import resumeUrl from "/Ararat_Gevorgyan.pdf";
 
 const code = `import React from 'react';
 import { UI, <UX> } from './engine';
@@ -43,17 +44,24 @@ const Hero = () => {
               architectures into delightful, intuitive user interfaces.
             </div>
             <div className="hero__btns grid sm:flex sm:flex-wrap gap-4">
-              <Button size="large" className="bg-accent-indigo">
-                <span className="flex gap-2 items-center justify-center">
-                  Explore Work
-                  <Icon type="code" />
-                </span>
+              <Button
+                size="large"
+                variant="primary"
+                contentClassName="flex gap-2 items-center justify-center"
+              >
+                Explore Work
+                <Icon type="code" />
               </Button>
-              <Button size="large" className="border border-slate-700">
-                <span className="flex gap-2 items-center justify-center">
-                  Download Resume
-                  <Icon type="download" />
-                </span>
+              <Button
+                as="a"
+                href={resumeUrl}
+                download
+                size="large"
+                variant="secondary"
+                contentClassName="flex gap-2 items-center justify-center"
+              >
+                Download Resume
+                <Icon type="download" />
               </Button>
             </div>
           </div>
