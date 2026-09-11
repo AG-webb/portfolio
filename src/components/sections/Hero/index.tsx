@@ -39,12 +39,17 @@ const Hero = () => {
               <span className="text-accent-cyan">modern UI</span>
             </h1>
             <div className="hero__text text-base text-slate-300 mb-4 lg:mb-8">
-              Senior Front-End Engineer specializing in React, Next.js, and
-              performance-driven design systems. Turning complex system
-              architectures into delightful, intuitive user interfaces.
+              Front-End Developer with 6+ years of experience turning ideas into
+              reliable, intuitive, and engaging digital products. I combine
+              technical thinking, attention to detail, and a user-focused
+              approach to solve problems and deliver high-quality solutions.
+              Driven by continuous learning, ownership, and creating real value
+              for users and businesses.
             </div>
             <div className="hero__btns grid sm:flex sm:flex-wrap gap-4">
               <Button
+                as='a'
+                href='#projects'
                 size="large"
                 variant="primary"
                 contentClassName="flex gap-2 items-center justify-center"

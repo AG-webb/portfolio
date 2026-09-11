@@ -3,15 +3,27 @@ import CodeBox from "@/components/ui/CodeBox";
 import Section from "@/components/ui/Section";
 
 const code = `# Biography
-// Over 8+ years of craft in front-end development.
-// I bridge the gap between engineering and design.
-// Deeply obsessed with performance optimizations,
-// accessible semantics, and high-fidelity interaction.
+// Front-end developer focused on building
+// responsive, accessible, and interactive web experiences.
+// I turn designs and ideas into clean, reusable interfaces
+// with a strong focus on performance, usability, and detail.
 
-$ npx dev-tools --experience
-// - Refactored legacy framework codebase to Next.js (40% load time cut)
-// - Engineered atomic design system token mapping from Figma APIs
-// - Standardized WCAG 2.1 compliance structures systematically`;
+// I enjoy working across the entire front-end process —
+// from translating designs into responsive layouts
+// to implementing interactions, animations, and
+// connecting interfaces with APIs.
+
+$ whoami --experience
+// - 4+ years of experience in front-end development
+// - Building modern web interfaces with React & JavaScript
+// - Strong foundation in HTML5, CSS/SCSS & responsive design
+// - Working with TypeScript and Redux Toolkit
+// - Creating interactive experiences with GSAP
+// - Integrating REST APIs into web applications
+// - Focused on Web Accessibility & Core Web Vitals
+// - Using Git, GitHub/GitLab & Jira in Agile/Scrum teams
+// - Experience maintaining and improving existing codebases
+// - Comfortable collaborating with designers and developers`;
 
 const About = () => {
   return (
@@ -25,20 +37,28 @@ const About = () => {
         <CodeBox title="bash - profile.md" code={code} />
         <div className="about__stack grid gap-3 lg:gap-6">
           <BadgeGroup
-            title="Languages"
-            badges={["JavaScript(ES6+)", "React", "TypeScript"]}
+            title="Core Frontend"
+            badges={["HTML5", "CSS", "Javascript(ES6+)", "Typescript", "JQuery"]}
           />
           <BadgeGroup
-            title="Frameworks & Libs"
-            badges={["React", "TypeScript", "Next.js", "Tailwind CSS"]}
+            title="Frameworks, Libs & Development Tolls"
+            badges={["React", "Redux Toolkit", "GSAP", "Gulp", "WebPack"]}
           />
           <BadgeGroup
-            title="Styling & Design"
-            badges={["React", "TypeScript", "Next.js", "Tailwind CSS"]}
+            title="Styling & UI"
+            badges={["Tailwind CSS", "SCSS", "Responsive Web Design", "CSS Animations"]}
           />
           <BadgeGroup
-            title="Tools & Backend"
-            badges={["React", "TypeScript", "Next.js", "Tailwind CSS"]}
+            title="Web APIs & Performance"
+            badges={["REST APIs", "Core Web Vitals", "Web Accessibility(a11y)"]}
+          />
+          <BadgeGroup
+            title="Version Control & Collaboration"
+            badges={["Git", "GitHub", "GitLab"]}
+          />
+          <BadgeGroup
+            title="Project Management & Methodologies"
+            badges={["Agile", "Scrum", "Jira"]}
           />
         </div>
       </div>
