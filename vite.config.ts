@@ -12,6 +12,7 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
+  base: "/portfolio/",
   css: {
     postcss: {
       plugins: [autoprefixer(), postcssNested()],
