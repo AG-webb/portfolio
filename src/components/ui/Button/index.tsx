@@ -32,7 +32,7 @@ const Button = <E extends ElementType = "button">({
   const Component = as ?? "button";
   const isButton = Component === "button";
 
-  const baseClasses = "relative inline-flex items-center btn cursor-pointer";
+  const baseClasses = "relative inline-flex items-center justify-center btn cursor-pointer";
   const variantClasses = variant && variantStyles[variant];
   const sizeClasses = size && sizeStyles[size];
 

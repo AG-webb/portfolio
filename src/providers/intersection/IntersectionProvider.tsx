@@ -30,8 +30,6 @@ export const IntersectionProvider = ({ children }: { children: ReactNode }) => {
     let intersectingSections: { id: string; isIntersecting: boolean }[] = [];
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
-      console.log(entries)
-
       const visibleSections = entries.filter((entry) => {
         if (intersectingSections.length) {
           intersectingSections = [

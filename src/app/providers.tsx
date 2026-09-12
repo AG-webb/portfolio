@@ -8,7 +8,7 @@ import { store } from "./store";
 const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Provider store={store}>
           <IntersectionProvider>{children}</IntersectionProvider>
         </Provider>

@@ -6,13 +6,13 @@ import postcssNested from "postcss-nested";
 import { defineConfig } from "vite";
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
-  base: "/portfolio/",
+  base: mode === "production" ? "/portfolio/" : "/",
   css: {
     postcss: {
       plugins: [autoprefixer(), postcssNested()],
@@ -21,4 +21,4 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
-});
+}));
