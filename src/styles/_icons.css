@@ -56,3 +56,48 @@
 .icon-phone:before {
   content: "\e908";
 }
+.icon-ant:before {
+  content: "\e909";
+}
+.icon-css:before {
+  content: "\e90a";
+}
+.icon-gitlab:before {
+  content: "\e90b";
+}
+.icon-git:before {
+  content: "\e90c";
+}
+.icon-gsap:before {
+  content: "\e90d";
+}
+.icon-gulp:before {
+  content: "\e90e";
+}
+.icon-html5:before {
+  content: "\e90f";
+}
+.icon-jira:before {
+  content: "\e910";
+}
+.icon-scss:before {
+  content: "\e911";
+}
+.icon-redux-toolkit:before {
+  content: "\e912";
+}
+.icon-react:before {
+  content: "\e913";
+}
+.icon-js:before {
+  content: "\e914";
+}
+.icon-jquery:before {
+  content: "\e915";
+}
+.icon-tailwind-css:before {
+  content: "\e916";
+}
+.icon-webpack:before {
+  content: "\e917";
+}

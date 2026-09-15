@@ -1,5 +1,7 @@
+import { getIconTypeByName } from "@/shared/funtions/getIconTypeByName";
 import clsx from "clsx";
 import Badge from "../Badge";
+import Icon from "../Icon";
 import type { BadgeGroupProps } from "./types";
 
 const BadgeGroup = ({ title, badges, className }: BadgeGroupProps) => {
@@ -18,6 +20,7 @@ const BadgeGroup = ({ title, badges, className }: BadgeGroupProps) => {
           return (
             <Badge key={index} palette={isOdd ? "indigo" : "cyan"}>
               {badge}
+              <Icon className="text-sm" type={getIconTypeByName(badge)} />
             </Badge>
           );
         })}

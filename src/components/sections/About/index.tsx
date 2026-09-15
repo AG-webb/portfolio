@@ -42,7 +42,7 @@ const About = () => {
             badges={[
               "HTML5",
               "CSS",
-              "Javascript(ES6+)",
+              "JavaScript(ES6+)",
               "Typescript",
               "JQuery",
             ]}
