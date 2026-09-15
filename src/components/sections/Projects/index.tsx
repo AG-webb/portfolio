@@ -22,15 +22,11 @@ const Projects = () => {
       <div className="projects__list grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {status === "loading" ? (
           <>
-            <div className="projects__item flex">
-              <Skeleton className="w-full h-145 rounded-xl" />
-            </div>
-            <div className="projects__item flex">
-              <Skeleton className="w-full h-145 rounded-xl" />
-            </div>
-            <div className="projects__item flex">
-              <Skeleton className="w-full h-145 rounded-xl" />
-            </div>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <div key={index} className="projects__item flex">
+                <Skeleton className="w-full h-145 rounded-xl" />
+              </div>
+            ))}
           </>
         ) : (
           projects?.map((project) => (
