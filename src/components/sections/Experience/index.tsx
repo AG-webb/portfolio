@@ -25,6 +25,7 @@ const Experience = () => {
         <TimelineItem
           date="2021 - 2025"
           company="Zoom Graphics"
+          company_url="https://zoom.am/"
           description="Front-end developer"
           text={[
             "Translated UI designs into responsive, accessible web interfaces, ensuring consistent behavior across browsers and screen sizes.",
@@ -37,6 +38,7 @@ const Experience = () => {
         <TimelineItem
           date="2025 - 2026"
           company="EPAM Systems LLC"
+          company_url="https://www.epam.com/"
           description="Software Engineer"
           text={[
             "Developed and maintained complex web applications, contributing across both responsive UI implementation and application functionality.",

@@ -1,20 +1,31 @@
+import Icon from "@/components/ui/Icon";
 import type { TimelineItemProps } from "./types";
 
 const TimelineItem = ({
   date,
   company,
+  company_url,
   description,
   text,
 }: TimelineItemProps) => {
+  const CompanyElement = company_url ? "a" : "div";
+
   return (
     <div className="timeline-item max-sm:grid max-sm:grid-cols-[28px_auto] max-sm:gap-2 sm:gap-8 sm:flex">
-      <div className="timeline-item__info grid content-start gap-1 sm:pb-12 shrink-0 sm:w-50 lg:w-70">
+      <div className="timeline-item__info grid items-start justify-items-start content-start gap-1 sm:pb-12 shrink-0 sm:w-50 lg:w-70">
         <div className="timeline-item__date text-xs font-semibold text-accent-cyan max-sm:pt-0.5">
           {date}
         </div>
-        <div className="timeline-item__company text-lg font-bold text-neutral-50">
+        <CompanyElement
+          href={company_url}
+          target={company_url && "_blank"}
+          className="timeline-item__company flex flex-wrap gap-2 text-lg font-bold text-neutral-50"
+        >
           {company}
-        </div>
+          {company_url && (
+            <Icon type="external-link" className="text-xs self-center" />
+          )}
+        </CompanyElement>
         <div className="timeline-item__description text-xs text-neutral-400">
           {description}
         </div>
