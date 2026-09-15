@@ -89,6 +89,8 @@ const Header = () => {
           </div>
           <div className="header__action">
             <Button
+              as='a'
+              href='mailto: arikgevorgyan23@gmail.com'
               size="medium"
               variant="primary"
               contentClassName="flex gap-2 items-center"
