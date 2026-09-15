@@ -14,7 +14,7 @@ const code = `# Biography
 // connecting interfaces with APIs.
 
 $ whoami --experience
-// - 4+ years of experience in front-end development
+// - 5+ years of experience in front-end development
 // - Building modern web interfaces with React & JavaScript
 // - Strong foundation in HTML5, CSS/SCSS & responsive design
 // - Working with TypeScript and Redux Toolkit

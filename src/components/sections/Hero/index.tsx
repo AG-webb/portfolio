@@ -39,7 +39,7 @@ const Hero = () => {
               <span className="text-accent-cyan">modern UI</span>
             </h1>
             <div className="hero__text text-base text-slate-300 mb-4 lg:mb-8">
-              Front-End Developer with 6+ years of experience turning ideas into
+              Front-End Developer with 5+ years of experience turning ideas into
               reliable, intuitive, and engaging digital products. I combine
               technical thinking, attention to detail, and a user-focused
               approach to solve problems and deliver high-quality solutions.
