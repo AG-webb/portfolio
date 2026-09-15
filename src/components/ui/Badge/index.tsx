@@ -5,7 +5,7 @@ import "./style.css";
 type BadgeProps = {
   className?: string;
   children: ReactNode;
-  palette: "indigo" | "cyan";
+  palette?: "indigo" | "cyan";
 };
 
 const Badge = ({ children, className, palette }: BadgeProps) => {

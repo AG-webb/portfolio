@@ -1,5 +1,6 @@
 import BadgeGroup from "@/components/ui/BadgeGroup";
 import CodeBox from "@/components/ui/CodeBox";
+import LanguageBox from "@/components/ui/LanguageBox";
 import Section from "@/components/ui/Section";
 
 const code = `# Biography
@@ -38,7 +39,13 @@ const About = () => {
         <div className="about__stack grid gap-3 lg:gap-6">
           <BadgeGroup
             title="Core Frontend"
-            badges={["HTML5", "CSS", "Javascript(ES6+)", "Typescript", "JQuery"]}
+            badges={[
+              "HTML5",
+              "CSS",
+              "Javascript(ES6+)",
+              "Typescript",
+              "JQuery",
+            ]}
           />
           <BadgeGroup
             title="Frameworks, Libs & Development Tolls"
@@ -46,7 +53,12 @@ const About = () => {
           />
           <BadgeGroup
             title="Styling & UI"
-            badges={["Tailwind CSS", "SCSS", "Responsive Web Design", "CSS Animations"]}
+            badges={[
+              "Tailwind CSS",
+              "SCSS",
+              "Responsive Web Design",
+              "CSS Animations",
+            ]}
           />
           <BadgeGroup
             title="Web APIs & Performance"
@@ -61,6 +73,26 @@ const About = () => {
             badges={["Agile", "Scrum", "Jira"]}
           />
         </div>
+      </div>
+      <div className="languages grid md:grid-cols-3 gap-6">
+        <LanguageBox
+          title="English"
+          level="B1+"
+          description="Strong proficiency in reading, writing, and technical communication."
+          indicator={60}
+        />
+        <LanguageBox
+          title="Russian"
+          level="B2"
+          description="Upper-intermediate proficiency with strong understanding of spoken and written contexts."
+          indicator={70}
+        />
+        <LanguageBox
+          title="Armenian"
+          level="Native"
+          description="Fluent in everyday conversation, reading, and writing with full cultural nuance."
+          indicator={100}
+        />
       </div>
     </Section>
   );

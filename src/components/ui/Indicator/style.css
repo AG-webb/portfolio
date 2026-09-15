@@ -1,0 +1,9 @@
+.indicator {
+  &__value {
+    color: var(--indicator-color, var(--color-accent-cyan));
+  }
+
+  &__truck {
+    background-color: var(--indicator-color, var(--color-accent-cyan));
+  }
+}

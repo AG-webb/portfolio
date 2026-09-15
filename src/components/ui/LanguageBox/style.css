@@ -1,0 +1,10 @@
+.language-box {
+  &:nth-child(odd) {
+    --indicator-color: var(--color-accent-cyan);
+    --badge-palette: var(--palette-cyan);
+  }
+  &:nth-child(even) {
+    --indicator-color: var(--color-accent-indigo);
+    --badge-palette: var(--palette-indigo);
+  }
+}
