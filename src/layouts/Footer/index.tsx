@@ -4,7 +4,7 @@ import "./style.css";
 const Footer = () => (
   <footer className="footer bg-[#0B1323]">
     <div className="container">
-      <div className="footer__wrap grid gap-4 py-5 sm:flex sm:items-center sm:justify-between md:py-10">
+      <div className="footer__wrap grid gap-4 pt-5 pb-10 sm:flex sm:items-center sm:justify-between md:py-10">
         <div className="footer__copyright text-[12px] text-neutral-400">
           © 2026 Ararat/Gevorgyan. All rights reserved.
         </div>

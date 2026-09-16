@@ -57,7 +57,7 @@ const Header = () => {
                 isOpen ? "" : "max-lg:-translate-x-full",
               )}
             >
-              <nav className="nav text-neutral-300 max-lg:p-6 max-lg:grid max-lg:content-between max-md:p-4">
+              <nav className="nav text-neutral-300 max-lg:p-6 max-lg:grid max-lg:content-between max-md:px-4 max-md:pt-4 max-md:pb-10">
                 <div className="nav__wrap grid gap-8 lg:flex max-lg:pt-20">
                   {status === "loading"
                     ? Array.from({ length: 4 }).map((_, index) => (
@@ -89,8 +89,8 @@ const Header = () => {
           </div>
           <div className="header__action">
             <Button
-              as='a'
-              href='mailto: arikgevorgyan23@gmail.com'
+              as="a"
+              href="mailto: arikgevorgyan23@gmail.com"
               size="medium"
               variant="primary"
               contentClassName="flex gap-2 items-center"
