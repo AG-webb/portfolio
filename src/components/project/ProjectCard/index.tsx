@@ -2,6 +2,7 @@ import noImage from "@/assets/images/no-image.png";
 import Badge from "@/components/ui/Badge";
 import Icon from "@/components/ui/Icon";
 import type { Project } from "@/features/projects/types";
+import { getIconTypeByName } from "@/shared/funtions/getIconTypeByName";
 
 const ProjectCard = ({
   image_url,
@@ -41,6 +42,7 @@ const ProjectCard = ({
           {stack.map((tech, index) => (
             <Badge key={index} palette="cyan">
               {tech}
+              <Icon type={getIconTypeByName(tech)} />
             </Badge>
           ))}
         </div>

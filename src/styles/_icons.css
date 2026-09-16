@@ -29,75 +29,84 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-right:before {
-  content: "\e900";
-}
-.icon-code:before {
-  content: "\e901";
-}
-.icon-download:before {
-  content: "\e902";
-}
-.icon-external-link:before {
-  content: "\e903";
-}
-.icon-github:before {
-  content: "\e904";
-}
-.icon-linkedin:before {
-  content: "\e905";
-}
-.icon-mail:before {
-  content: "\e906";
-}
-.icon-map-pin:before {
-  content: "\e907";
-}
-.icon-phone:before {
-  content: "\e908";
+.icon-axios:before {
+  content: "\e91a";
 }
 .icon-ant:before {
-  content: "\e909";
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-code:before {
+  content: "\e902";
 }
 .icon-css:before {
-  content: "\e90a";
+  content: "\e903";
 }
-.icon-gitlab:before {
-  content: "\e90b";
+.icon-download:before {
+  content: "\e904";
+}
+.icon-external-link:before {
+  content: "\e905";
 }
 .icon-git:before {
-  content: "\e90c";
+  content: "\e906";
+}
+.icon-github:before {
+  content: "\e907";
+}
+.icon-gitlab:before {
+  content: "\e908";
 }
 .icon-gsap:before {
-  content: "\e90d";
+  content: "\e909";
 }
 .icon-gulp:before {
-  content: "\e90e";
+  content: "\e90a";
 }
 .icon-html5:before {
-  content: "\e90f";
+  content: "\e90b";
+}
+.icon-javascript:before {
+  content: "\e90c";
 }
 .icon-jira:before {
+  content: "\e90d";
+}
+.icon-jquery:before {
+  content: "\e90e";
+}
+.icon-linkedin:before {
+  content: "\e90f";
+}
+.icon-mail:before {
   content: "\e910";
 }
-.icon-scss:before {
+.icon-map-pin:before {
   content: "\e911";
 }
-.icon-redux-toolkit:before {
+.icon-phone:before {
   content: "\e912";
 }
 .icon-react:before {
   content: "\e913";
 }
-.icon-js:before {
+.icon-redux-toolkit:before {
   content: "\e914";
 }
-.icon-jquery:before {
+.icon-scss:before {
   content: "\e915";
 }
-.icon-tailwind-css:before {
+.icon-swiper:before {
   content: "\e916";
 }
-.icon-webpack:before {
+.icon-tailwind-css:before {
   content: "\e917";
+}
+.icon-typescript:before {
+  content: "\e918";
+}
+.icon-webpack:before {
+  content: "\e919";
 }
