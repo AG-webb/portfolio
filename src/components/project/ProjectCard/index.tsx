@@ -57,7 +57,11 @@ const ProjectCard = ({
             aria-label="live site url"
             className="text-[13px] font-semibold flex items-center gap-1 text-accent-cyan"
           >
-            {isPrivate ? "Info" : "Explore Live Site"}
+            {isPrivate
+              ? "Info"
+              : github_url
+                ? "Github repository"
+                : "Explore Live Site"}
             <Icon type="external-link" />
           </a>
           {github_url ? (
