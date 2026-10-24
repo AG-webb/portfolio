@@ -29,84 +29,93 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-axios:before {
-  content: "\e91a";
-}
 .icon-ant:before {
   content: "\e900";
 }
 .icon-arrow-right:before {
   content: "\e901";
 }
-.icon-code:before {
+.icon-axios:before {
   content: "\e902";
 }
-.icon-css:before {
+.icon-code:before {
   content: "\e903";
 }
-.icon-download:before {
+.icon-css:before {
   content: "\e904";
 }
-.icon-external-link:before {
+.icon-download:before {
   content: "\e905";
 }
-.icon-git:before {
+.icon-express:before {
   content: "\e906";
 }
-.icon-github:before {
+.icon-external-link:before {
   content: "\e907";
 }
-.icon-gitlab:before {
+.icon-git:before {
   content: "\e908";
 }
-.icon-gsap:before {
+.icon-github:before {
   content: "\e909";
 }
-.icon-gulp:before {
+.icon-gitlab:before {
   content: "\e90a";
 }
-.icon-html5:before {
+.icon-gsap:before {
   content: "\e90b";
 }
-.icon-javascript:before {
+.icon-gulp:before {
   content: "\e90c";
 }
-.icon-jira:before {
+.icon-headless-ui:before {
   content: "\e90d";
 }
-.icon-jquery:before {
+.icon-html5:before {
   content: "\e90e";
 }
-.icon-linkedin:before {
+.icon-javascript:before {
   content: "\e90f";
 }
-.icon-mail:before {
+.icon-jira:before {
   content: "\e910";
 }
-.icon-map-pin:before {
+.icon-jquery:before {
   content: "\e911";
 }
-.icon-phone:before {
+.icon-linkedin:before {
   content: "\e912";
 }
-.icon-react:before {
+.icon-mail:before {
   content: "\e913";
 }
-.icon-redux-toolkit:before {
+.icon-map-pin:before {
   content: "\e914";
 }
-.icon-scss:before {
+.icon-phone:before {
   content: "\e915";
 }
-.icon-swiper:before {
+.icon-react:before {
   content: "\e916";
 }
-.icon-tailwind-css:before {
+.icon-redux-toolkit:before {
   content: "\e917";
 }
-.icon-typescript:before {
+.icon-scss:before {
   content: "\e918";
 }
-.icon-webpack:before {
+.icon-swiper:before {
   content: "\e919";
+}
+.icon-tailwind-css:before {
+  content: "\e91a";
+}
+.icon-typescript:before {
+  content: "\e91b";
+}
+.icon-vite:before {
+  content: "\e91c";
+}
+.icon-webpack:before {
+  content: "\e91d";
 }
