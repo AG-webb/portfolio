@@ -3,14 +3,15 @@ import Section from "@/components/ui/Section";
 import Skeleton from "@/components/ui/Skeleton";
 import { useProjects } from "@/features/projects/hooks/useProjects";
 import { getProjects } from "@/features/projects/model/projectsThunks";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+// @ts-expect-error Splide's CSS entry point has no TypeScript declarations.
+import { Splide, SplideSlide, type Options } from "@splidejs/react-splide";
 // @ts-expect-error Splide's CSS entry point has no TypeScript declarations.
 import "@splidejs/react-splide/css/core";
 import clsx from "clsx";
 import { useEffect } from "react";
 import "./style.css";
 
-const splideOptions = {
+const splideOptions: Options = {
   type: "loop",
   perPage: 3,
   perMove: 1,

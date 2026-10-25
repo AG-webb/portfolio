@@ -24,9 +24,6 @@
 
     "paths": {
       "@/*": ["./src/*"],
-      "@splidejs/react-splide": [
-        "./node_modules/@splidejs/react-splide/dist/types/index.d.ts"
-      ]
     }
   },
   "include": ["src", "src/**/*.css"]
