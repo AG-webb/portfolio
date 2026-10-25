@@ -69,12 +69,10 @@ const Header = () => {
                           onClick={() => handleClick(item.name)}
                           type="button"
                           className={clsx(
-                            "nav__link text-2lg lg:text-xs font-medium text-left cursor-pointer",
-                            {
-                              "text-accent-indigo":
-                                activeSection ===
-                                item.name?.toLocaleLowerCase(),
-                            },
+                            "nav__link text-2lg lg:text-xs font-medium text-left cursor-pointer transition-colors",
+                            activeSection === item.name?.toLocaleLowerCase()
+                              ? "text-accent-indigo"
+                              : "hover:text-slate-50",
                           )}
                         >
                           {item.name}
@@ -95,8 +93,8 @@ const Header = () => {
               variant="primary"
               contentClassName="flex gap-2 items-center"
               className={clsx(
-                "transition-opacity",
-                isOpen ? "max-lg:opacity-0" : "",
+                "max-lg:transition-opacity",
+                isOpen && "max-lg:opacity-0",
               )}
             >
               Hire Me

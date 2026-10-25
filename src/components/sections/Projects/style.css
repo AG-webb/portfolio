@@ -26,6 +26,10 @@
     background-color: var(--color-accent-indigo);
     cursor: pointer;
 
+    &:hover {
+      background-color: rgb(var(--palette-indigo) / 0.7);
+    }
+
     svg {
       width: 16px;
 

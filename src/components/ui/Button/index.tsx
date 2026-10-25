@@ -8,8 +8,8 @@ import type {
 } from "./types";
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-accent-indigo",
-  secondary: "border border-slate-700",
+  primary: "bg-accent-indigo hover:bg-accent-indigo/70",
+  secondary: "border border-slate-700 hover:border-slate-500",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -32,7 +32,8 @@ const Button = <E extends ElementType = "button">({
   const Component = as ?? "button";
   const isButton = Component === "button";
 
-  const baseClasses = "relative inline-flex items-center justify-center btn cursor-pointer";
+  const baseClasses =
+    "relative inline-flex items-center justify-center btn cursor-pointer transition-colors";
   const variantClasses = variant && variantStyles[variant];
   const sizeClasses = size && sizeStyles[size];
 
