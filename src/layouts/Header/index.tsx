@@ -31,79 +31,82 @@ const Header = () => {
   }, [dispatch]);
 
   return (
-    <header
-      className={clsx(
-        "header shift-element py-4 md:py-5",
-        isOpen ? "header_open" : "",
-      )}
-    >
-      <div className="container">
-        <div className="header__wrap">
-          <div className="header__burger lg:hidden">
-            <Burger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
-          </div>
-          <div
-            className={clsx(
-              "header__name text-sm lg:text-lg max-lg:absolute max-lg:right-6 max-md:right-4 transition-opacity",
-              !isOpen ? "max-lg:opacity-0" : "",
-            )}
-          >
-            {"<Ararat/Gevorgyan>"}
-          </div>
-          <div className="header__nav lg:z-1 lg:relative">
+    <>
+      {/* <ThemeSwitch /> */}
+      <header
+        className={clsx(
+          "header shift-element py-4 md:py-5",
+          isOpen ? "header_open" : "",
+        )}
+      >
+        <div className="container">
+          <div className="header__wrap">
+            <div className="header__burger lg:hidden">
+              <Burger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+            </div>
             <div
               className={clsx(
-                "header-menu max-lg:fixed max-lg:inset-0 max-lg:bg-primary-900 max-lg:overflow-y-scroll max-lg:transition-transform max-lg:grid",
-                isOpen ? "" : "max-lg:-translate-x-full",
+                "header__name text-sm lg:text-lg max-lg:absolute max-lg:right-6 max-md:right-4 transition-opacity",
+                !isOpen ? "max-lg:opacity-0" : "",
               )}
             >
-              <nav className="nav text-neutral-300 max-lg:p-6 max-lg:grid max-lg:content-between max-md:px-4 max-md:pt-4 max-md:pb-10">
-                <div className="nav__wrap grid gap-8 lg:flex max-lg:pt-20">
-                  {status === "loading"
-                    ? Array.from({ length: 4 }).map((_, index) => (
-                        <Skeleton key={index} className="min-h-5 min-w-20" />
-                      ))
-                    : nav?.map((item) => (
-                        <button
-                          key={item.id}
-                          onClick={() => handleClick(item.name)}
-                          type="button"
-                          className={clsx(
-                            "nav__link text-2lg lg:text-xs font-medium text-left cursor-pointer transition-colors",
-                            activeSection === item.name?.toLocaleLowerCase()
-                              ? "text-accent-indigo"
-                              : "hover:text-slate-50",
-                          )}
-                        >
-                          {item.name}
-                        </button>
-                      ))}
-                </div>
-                <div className="nav__footer flex items-center gap-4 mt-10 lg:hidden">
-                  <SocialMedia />
-                </div>
-              </nav>
+              {"<Ararat/Gevorgyan>"}
+            </div>
+            <div className="header__nav lg:z-1 lg:relative">
+              <div
+                className={clsx(
+                  "header-menu max-lg:fixed max-lg:inset-0 max-lg:bg-primary-900 max-lg:overflow-y-scroll max-lg:transition-transform max-lg:grid",
+                  isOpen ? "" : "max-lg:-translate-x-full",
+                )}
+              >
+                <nav className="nav text-neutral-300 max-lg:p-6 max-lg:grid max-lg:content-between max-md:px-4 max-md:pt-4 max-md:pb-10">
+                  <div className="nav__wrap grid gap-8 lg:flex max-lg:pt-20">
+                    {status === "loading"
+                      ? Array.from({ length: 4 }).map((_, index) => (
+                          <Skeleton key={index} className="min-h-5 min-w-20" />
+                        ))
+                      : nav?.map((item) => (
+                          <button
+                            key={item.id}
+                            onClick={() => handleClick(item.name)}
+                            type="button"
+                            className={clsx(
+                              "nav__link text-2lg lg:text-xs font-medium text-left cursor-pointer transition-colors",
+                              activeSection === item.name?.toLocaleLowerCase()
+                                ? "text-accent-indigo"
+                                : "hover:text-neutral-50",
+                            )}
+                          >
+                            {item.name}
+                          </button>
+                        ))}
+                  </div>
+                  <div className="nav__footer flex items-center gap-4 mt-10 lg:hidden">
+                    <SocialMedia />
+                  </div>
+                </nav>
+              </div>
+            </div>
+            <div className="header__action">
+              <Button
+                as="a"
+                href="mailto: arikgevorgyan23@gmail.com"
+                size="medium"
+                variant="primary"
+                contentClassName="flex gap-2 items-center"
+                className={clsx(
+                  "max-lg:transition-opacity",
+                  isOpen && "max-lg:opacity-0",
+                )}
+              >
+                Hire Me
+                <Icon type="arrow-right" />
+              </Button>
             </div>
           </div>
-          <div className="header__action">
-            <Button
-              as="a"
-              href="mailto: arikgevorgyan23@gmail.com"
-              size="medium"
-              variant="primary"
-              contentClassName="flex gap-2 items-center"
-              className={clsx(
-                "max-lg:transition-opacity",
-                isOpen && "max-lg:opacity-0",
-              )}
-            >
-              Hire Me
-              <Icon type="arrow-right" />
-            </Button>
-          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

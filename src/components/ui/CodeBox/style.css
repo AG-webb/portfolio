@@ -11,7 +11,7 @@
   --codebox-token-punctuation: #cbd5e1;
   --codebox-token-link: #cbd5e1;
 
-  border: 1px solid var(--codebox-border-color, var(--color-slate-700));
+  border: 1px solid var(--codebox-border-color, var(--color-neutral-700));
   border-radius: 12px;
   overflow: hidden;
   font-family: var(--font-secondary);

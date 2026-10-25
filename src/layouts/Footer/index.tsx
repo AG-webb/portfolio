@@ -2,7 +2,7 @@ import SocialMedia from "@/components/ui/SocialMedia";
 import "./style.css";
 
 const Footer = () => (
-  <footer className="footer bg-[#0B1323]">
+  <footer className="footer bg-primary-600">
     <div className="container">
       <div className="footer__wrap grid gap-4 pt-5 pb-10 sm:flex sm:items-center sm:justify-between md:py-10">
         <div className="footer__copyright text-[12px] text-neutral-400">

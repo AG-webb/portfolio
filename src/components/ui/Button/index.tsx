@@ -8,7 +8,7 @@ import type {
 } from "./types";
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-accent-indigo hover:bg-accent-indigo/70",
+  primary: "bg-accent-indigo text-white hover:bg-accent-indigo/70",
   secondary: "border border-slate-700 hover:border-slate-500",
 };
 
