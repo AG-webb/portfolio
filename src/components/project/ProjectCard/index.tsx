@@ -24,7 +24,7 @@ const ProjectCard = ({
           height="200"
         />
       </div>
-      <div className="project-card__body p-5">
+      <div className="project-card__body p-3 md:p-5">
         <h3 className="project-card__title text-base font-bold mb-3 flex gap-2 items-center">
           {title}
           {isPrivate && (
@@ -37,7 +37,7 @@ const ProjectCard = ({
           {description}
         </p>
       </div>
-      <div className="project-card__footer grid gap-4 p-5 border-t border-neutral-700">
+      <div className="project-card__footer grid gap-3 p-4 border-t border-neutral-700 md:p-5">
         <div className="project-card__stack flex flex-wrap gap-1.5">
           {stack.map((tech, index) => {
             const isOdd = index % 2 === 1;
@@ -52,7 +52,7 @@ const ProjectCard = ({
         </div>
         <div className="project-card__links flex gap-3 justify-between">
           <a
-            href={site_url || "#"}
+            href={site_url || github_url || "#"}
             target="_blank"
             aria-label="live site url"
             className="text-[13px] font-semibold flex items-center gap-1 text-accent-cyan"

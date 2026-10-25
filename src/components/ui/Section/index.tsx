@@ -9,7 +9,7 @@ const Section = ({ id, subtitle, title, children, ...props }: SectionProps) => {
   return (
     <section id={id} ref={ref} {...props}>
       <div className="container">
-        <div className="grid gap-8 lg:gap-16">
+        <div className="grid gap-8 lg:gap-16 grid-cols-1">
           {subtitle && title ? (
             <HeadingGroup subtitle={subtitle} title={title} />
           ) : null}

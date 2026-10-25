@@ -5,8 +5,7 @@ export const getProjectsService: () => Promise<Project[] | null> = async () => {
   const { data: projects, error } = await supabase
     .from("projects")
     .select("*")
-    .order("created_at", { ascending: true })
-    // .range(0, 2);
+    .order("sort_order", { ascending: true });
 
   if (error) throw error;
 

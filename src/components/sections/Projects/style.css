@@ -1,0 +1,43 @@
+.projects-slider {
+  .splide__slide {
+    display: flex;
+  }
+
+  @media (max-width: 1024px) {
+    .splide__track {
+      overflow: visible;
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-accent-indigo);
+    cursor: pointer;
+
+    svg {
+      width: 16px;
+
+      path {
+        fill: currentColor;
+      }
+    }
+
+    &_prev {
+      svg {
+        rotate: 180deg;
+      }
+    }
+  }
+}
